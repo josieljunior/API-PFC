@@ -46,6 +46,6 @@ class ExpansesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def expanse_params
-      params.require(:expanse).permit(:description, :value, :date)
+      params.require(:expanse).permit(:description, :value, :date, :category)
     end
 end
