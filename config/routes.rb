@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   get 'expanses/:year/:month' , to: 'expanses#filterByMounth'
   get 'incomes/:year/:month' , to: 'incomes#filterByMounth'
+  get 'resume/:year/:month' , to: 'resume#index'
+
   resources :expanses 
   resources :incomes
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

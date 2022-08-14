@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  totalexpanses: 1.5
+  totalincomes: 1.5
+  balance: 1.5
+
+two:
+  totalexpanses: 1.5
+  totalincomes: 1.5
+  balance: 1.5
