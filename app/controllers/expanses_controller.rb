@@ -3,8 +3,12 @@ class ExpansesController < ApplicationController
 
   # GET /expanses
   def index
-    @expanses = Expanse.all
-
+    
+    if !(params[:category])
+      @expanses = Expanse.all
+    else
+      @expanses = Expanse.where("category = ?",params[:category])
+    end
     render json: @expanses
   end
 
