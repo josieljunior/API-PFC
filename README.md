@@ -1,24 +1,33 @@
-# README
+# Personal Financial Control
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Exemplos de requisições
+| Método    | Endpoint 
+| :---        |    :---   
+| GET, POST, DELETE, PUT    | /expanses       
+| GET, POST, DELETE, PUT    | /incomes
+| GET    | /expanses/1   
+| GET    | /expanses?page=2&per_page=2
+| GET    | /expanses?category=Health  
+| GET    | /incomes/1   
+| GET    | /incomes?page=2&per_page=2 
+| GET    | /incomes/2022/03
+| GET    | /expanses/2022/03   
+| GET    | /resume/2022/03   
 
-Things you may want to cover:
 
-* Ruby version
+### Resume
+Nesse endpoint é retornado um resumo de todas os gastos, rendas, saldo final e gasto por categoria do mes passado na url. Segue um exemplo com  `/resume/2022/03` :
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+{
+    "totalExpanses": 1600.0,
+    "totalIncomes": 1600.0,
+    "balance": 0.0,
+    "expansesByCategory": {
+        "Education": 400.0,
+        "Food": 400.0,
+        "Health": 400.0,
+        "Other": 400.0
+    }
+}
+```
