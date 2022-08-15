@@ -5,7 +5,7 @@ class IncomesController < ApplicationController
   def index
     @incomes = Income.all
 
-    render json: @incomes
+    render json: @incomes.page(page).per(per_page)
   end
 
   # GET /incomes/1

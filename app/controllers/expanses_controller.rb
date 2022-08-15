@@ -9,7 +9,7 @@ class ExpansesController < ApplicationController
     else
       @expanses = Expanse.where("category = ?",params[:category])
     end
-    render json: @expanses
+    render json: @expanses.page(page).per(per_page)
   end
 
   # GET /expanses/1
@@ -58,4 +58,5 @@ class ExpansesController < ApplicationController
     def expanse_params
       params.require(:expanse).permit(:description, :value, :date, :category)
     end
+
 end
